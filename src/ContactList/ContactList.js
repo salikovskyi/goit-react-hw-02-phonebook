@@ -1,4 +1,5 @@
 import css from './ContactList.module.css'
+import PropTypes from 'prop-types';
 
 export default function ContactList({contact, ondeleteContact}) {
     return (
@@ -19,3 +20,17 @@ export default function ContactList({contact, ondeleteContact}) {
     </ul>
     )
 }
+
+ContactList.propTypes = {
+  ondeleteContact: PropTypes.func.isRequired,
+  contact: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+
+    })
+  )
+}
+
+

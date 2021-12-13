@@ -1,5 +1,6 @@
 
 import css from './FilterList.module.css'
+import PropTypes from 'prop-types';
 
 export default function FilterList({filter, onFilterHandleChange }) {
     const onHandleChange = event => {
@@ -18,3 +19,14 @@ export default function FilterList({filter, onFilterHandleChange }) {
         </label>
     )
 }
+
+
+
+FilterList.propTypes = {
+  filter: PropTypes.string.isRequired,
+  onFilterHandleChange: PropTypes.func.isRequired
+
+    }
+
+
+
